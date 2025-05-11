@@ -1,0 +1,15 @@
+float:
+  any:
+    - base_args: [ '@metric', '@dimension' ]
+      constructor: DeepSearch
+      disabled: false
+      docker_tag: ann-benchmarks-deepsearch
+      module: ann_benchmarks.algorithms.deepsearch
+      name: deepsearch
+      run_groups:
+        HNSW:
+          args:
+            L: 200
+            R: [ 32 ]
+            level: [ 0, 1, 2 ]
+          query_args: [ [ 120, 200, 400 ] ]
